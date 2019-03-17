@@ -15,14 +15,16 @@ k是正整数，并且小于或等于链表的长度。如果节点数不是k的
 只允许恒定的额外内存。
 您不能更改列表节点中的值，只能更改节点本身。
 
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     struct ListNode *next;
- * };
- */
+
+    Definition for singly-linked list.
+    struct ListNode {
+      int val;
+      struct ListNode *next;
+    };
+  
     
+
+
     struct ListNode* reverseKGroup(struct ListNode* head, int k) {
     if(head==NULL || head->next==NULL ||k<2) 
 	return head;
