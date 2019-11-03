@@ -16,19 +16,21 @@
 输出： false  
 说明：从右到左读取01。因此它不是回文。  
 
-    bool isPalindrome(int x) {
-    	int left, right, len=1;
-    	if(x > INT_MAX || x < 0)		
+```c
+bool isPalindrome(int x) {
+	int left, right, len=1;
+	if(x > INT_MAX || x < 0)		
+    	return false;
+	while(x/len >= 10)			
+    	len *= 10;
+	while(x){
+    	left = x / len;			
+    	right = x % 10;			
+    	if(left != right)		
         	return false;
-    	while(x/len >= 10)			
-        	len *= 10;
-    	while(x){
-        	left = x / len;			
-        	right = x % 10;			
-        	if(left != right)		
-            	return false;
-        	x = (x % len) / 10;		
-        	len /= 100;			
-    	}
-    	return true;
-    }
+    	x = (x % len) / 10;		
+    	len /= 100;			
+	}
+	return true;
+}
+```
